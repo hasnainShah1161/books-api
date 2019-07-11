@@ -4,8 +4,20 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv/config");
 
-// bodyParser middleware
+// importin cors
+const cors = require("cors");
 
+//enables cors
+app.use(
+  cors({
+    allowedHeaders: ["sessionId", "Content-Type"],
+    exposedHeaders: ["sessionId"],
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false
+  })
+);
+// bodyParser middleware
 app.use(bodyParser.json());
 
 //load models
