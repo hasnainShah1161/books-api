@@ -26,17 +26,20 @@ class HandlerGenerator {
             res.json({
               success: true,
               message: "Authentication successful!",
+              isAuthenticated: true,
               token: token
             });
           } else {
             res.json({
               success: false,
+              isAuthenticated: false,
               message: "Incorrect username or password"
             });
           }
         } else {
           res.json({
             success: false,
+            isAuthenticated: false,
             message: "Authentication failed! Please check the request"
           });
         }
@@ -45,33 +48,6 @@ class HandlerGenerator {
         res.json({ message: err });
       });
 
-    // For the given email fetch user from DB
-    // let mockedemail = "admin";
-    // let mockedPassword = "password";
-
-    // if (email && password) {
-    //   if (email === mockedemail && password === mockedPassword) {
-    //     // let token = jwt.sign({ email: email }, config.secret, {
-    //     //   expiresIn: "24h" // expires in 24 hours
-    //     // });
-    //     // return the JWT token for the future API calls
-    //     // res.json({
-    //     //   success: true,
-    //     //   message: "Authentication successful!",
-    //     //   token: token
-    //     // });
-    //   } else {
-    //     res.sendStatus(403).json({
-    //       success: false,
-    //       message: "Incorrect username or password"
-    //     });
-    //   }
-    // } else {
-    //   res.sendStatus(400).json({
-    //     success: false,
-    //     message: "Authentication failed! Please check the request"
-    //   });
-    // }
   }
   index(req, res) {
     res.json({
