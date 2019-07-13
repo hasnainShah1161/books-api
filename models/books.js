@@ -26,9 +26,9 @@ const booksSchema = new Schema({
   },
   author: {
     type: String,
-    required: true
+    required: true 
   },
-  about_author: {
+  about_author: { 
     type: String
   },
   image: {

@@ -65,10 +65,10 @@ routes.patch("/:id", async (req, res) => {
           videoUrl: req.body.videoUrl
         }
       }
-    );
+    ); 
 
     res.json(updateBook);
-  } catch (err) {
+  } catch (err) { 
     console.log(err);
     res.json({ message: err });
   }
