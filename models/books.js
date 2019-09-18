@@ -10,7 +10,7 @@ const devicesSchema = new Schema({
     type: String,
     required: true
   },
-  expirayDate: {
+  expiryDate: {
     type: Date
   },
   warranty: {
