@@ -40,7 +40,7 @@ mongoose
 
 // routes middleware
 
-app.use("/books", booksRoutes);
+app.use("/devices", booksRoutes);
 app.use("/user", userSignUp);
 app.use("/user", auth);
 const port = process.env.PORT || 5000;
