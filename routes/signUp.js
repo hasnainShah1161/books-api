@@ -19,7 +19,7 @@ routes.post("/signup", async (req, res) => {
       const signUpUser = await signUpUserNewUser.save();
       res.json({
         payLoad: signUpUser,
-        status: "SUCCESS"
+        status: "SUCCESS",
       });
     } else {
       res.json({

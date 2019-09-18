@@ -1,7 +1,7 @@
 const express = require("express");
 const routes = express.Router();
 const mongoose = require("mongoose");
-const Books = mongoose.model("books");
+const Books = mongoose.model("devices");
 
 // get all books
 routes.get("/", async (req, res) => {
@@ -65,10 +65,10 @@ routes.patch("/:id", async (req, res) => {
           videoUrl: req.body.videoUrl
         }
       }
-    ); 
+    );
 
     res.json(updateBook);
-  } catch (err) { 
+  } catch (err) {
     console.log(err);
     res.json({ message: err });
   }
