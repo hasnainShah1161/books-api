@@ -1,7 +1,7 @@
 const express = require("express");
 const routes = express.Router();
 const mongoose = require("mongoose");
-const Books = mongoose.model("devices");
+const Devices = mongoose.model("devices");
 
 // get all books
 routes.get("/", async (req, res) => {
@@ -14,7 +14,7 @@ routes.get("/", async (req, res) => {
 });
 //post route
 routes.post("/add-device", async (req, res) => {
-  const device = new Books({
+  const device = new Devices({
     name: req.body.name,
     cost: req.body.cost,
     expiryDate: req.body.expiryDate,
@@ -33,8 +33,8 @@ routes.post("/add-device", async (req, res) => {
 
 routes.delete("/:id", async (req, res) => {
   try {
-    const deleteBook = await Books.remove({ _id: req.params.id });
-    res.json(deleteBook);
+    const deleteDevice = await Devices.remove({ _id: req.params.id });
+    res.json(deleteDevice);
   } catch (err) {
     res.json({ message: err });
   }
@@ -44,7 +44,7 @@ routes.delete("/:id", async (req, res) => {
 
 routes.patch("/:id", async (req, res) => {
   try {
-    const updateBook = await Books.updateOne(
+    const updateDevice = await Devices.updateOne(
       { _id: req.params.id },
       {
         $set: {
@@ -62,7 +62,7 @@ routes.patch("/:id", async (req, res) => {
       }
     );
 
-    res.json(updateBook);
+    res.json(updateDevice);
   } catch (err) {
     console.log(err);
     res.json({ message: err });
@@ -73,7 +73,7 @@ routes.patch("/:id", async (req, res) => {
 
 routes.get("/:id", async (req, res) => {
   try {
-    const singleBook = await Books.findById(req.params.id);
+    const singleBook = await Devices.findById(req.params.id);
     res.json(singleBook);
   } catch (err) {
     res.json({ message: err });
