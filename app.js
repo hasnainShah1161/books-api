@@ -43,7 +43,8 @@ mongoose
 app.use("/devices", booksRoutes);
 app.use("/user", userSignUp);
 app.use("/user", auth);
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log("App is running on the port : " + port);
+
+var server = app.listen(process.env.PORT || 5000, () => {
+  var port = server.address().port;
+  console.log("Express is working on port " + port);
 });
