@@ -6,7 +6,7 @@ const Devices = mongoose.model("devices");
 // get all books
 routes.get("/", async (req, res) => {
   try {
-    const allBooks = await Books.find();
+    const allBooks = await Devices.find();
     res.json(allBooks);
   } catch (err) {
     res.json({ message: err });
