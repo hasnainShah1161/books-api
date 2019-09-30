@@ -73,8 +73,8 @@ routes.patch("/:id", async (req, res) => {
 
 routes.get("/:id", async (req, res) => {
   try {
-    const singleBook = await Devices.findById(req.params.id);
-    res.json(singleBook);
+    const singleDevice = await Devices.findById(req.params.id);
+    res.json(singleDevice);
   } catch (err) {
     res.json({ message: err });
   }

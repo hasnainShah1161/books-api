@@ -23,11 +23,13 @@ app.use(bodyParser.json());
 
 //load models
 require("./models/books");
+require("./models/user");
 require("./models/signUp");
 require("./models/login");
 
 // importing routes
-const booksRoutes = require("./routes/books");
+const deviceRoutes = require("./routes/books");
+const userRoutes = require("./routes/user");
 const userSignUp = require("./routes/signUp");
 const auth = require("./routes/auth");
 mongoose
@@ -40,7 +42,8 @@ mongoose
 
 // routes middleware
 
-app.use("/devices", booksRoutes);
+app.use("/devices", deviceRoutes);
+app.use("/user", userRoutes);
 app.use("/user", userSignUp);
 app.use("/user", auth);
 
